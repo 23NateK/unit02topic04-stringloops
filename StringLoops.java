@@ -37,11 +37,28 @@ public static boolean hasRepeatedConsecutives(String a){
   }
 return answer;
 }
+public static String reverseWords(String a){
+  String output="";
+  for(int x=a.length()-1;x>0;x--){
+  int n=a.lastIndexOf(" ",x-1);
+  if(n==-1){
+    n=0;
+  }
+  int n2=a.indexOf(" ", n+1);
+  if(n2==-1){
+    n2=x;
+  }
+  x=x-n2;
+  output=output+" "+a.substring(n,n2+1);
+}
+  return output;
+}
   public static void main(String[] args) {
 
     // testing of static methods goes here
     //System.out.println(reverseCharacters("academy"));
     //System.out.println(Arrays.toString(indexesOfAll("attack","a")));
-    System.out.println(hasRepeatedConsecutives("rook"));
-  }
+    //System.out.println(hasRepeatedConsecutives("rook"));
+    System.out.println(reverseWords("the quick brown"));
+}
 }
