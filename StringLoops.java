@@ -28,10 +28,20 @@ for (int n=1;n<len;n++){
 }
 return values;
 }
+public static boolean hasRepeatedConsecutives(String a){
+  boolean answer=false;
+  for(int n=0;n<a.length()-2;n++){
+    if(a.substring(n,n+1).equals(a.substring(n+1,n+2))){
+      answer=true;
+    }
+  }
+return answer;
+}
   public static void main(String[] args) {
 
     // testing of static methods goes here
     //System.out.println(reverseCharacters("academy"));
-    System.out.println(Arrays.toString(indexesOfAll("attack","a")));
+    //System.out.println(Arrays.toString(indexesOfAll("attack","a")));
+    System.out.println(hasRepeatedConsecutives("rook"));
   }
 }
